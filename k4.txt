@@ -1,0 +1,119 @@
+# software for network analysis 
+# will generate graphs and has many built in tools for graph theory
+import networkx as nx
+# used to generate plots
+import matplotlib.pyplot as plt
+
+
+G = nx.Graph()
+G.add_nodes_from([0, 1, 2])
+G.add_edges_from([(0, 1), (0, 2), (1,2)])
+nx.draw(G, with_labels=True, font_weight='bold')
+plt.show()
+
+# adds edges u,v to each graph in g6 file stores each to a list
+def create_2_apex(G):
+    
+    # create an empty list
+    graphs = []
+    edges = []
+    triangles = []
+
+    #iterate through the graphs in the g6 file
+
+    #add vertices u,v
+    G.add_node(3, weight=0.4, UTM=("13S", 382871, 3972649))
+    G.add_node(4, weight=0.4, UTM=("13S", 382971, 3972249))
+    edge = 0
+
+    # iterate through planar vertices add edge from vertex to u and v
+    while edge < 3:
+
+        G.add_edge(edge, 3)
+        G.add_edge(edge, 4)
+        edge = edge + 1
+
+    # return number of edges
+    m = int(G.number_of_edges())
+
+    # finds number of trinagles for each node
+    t = nx.triangles(G)
+
+    # return number of triangles in the graph
+    num_t = int(sum(t.values()) / 3)
+
+    # add updated graph to list
+    graphs.append(G)
+    
+    # add number of edges to list
+    edges.append(m)
+    
+    # add number of triangles to the list
+    triangles.append(num_t)
+
+
+
+    return graphs, edges, triangles
+
+def delete_edge_check_u(G):
+
+
+    bad_graphs = []
+
+    graph = G
+    
+    nx.draw(G, with_labels=True, font_weight='bold')
+    plt.show()
+    n = 0
+    while n < 4:
+        
+        print(n)
+        graph.remove_edge(4, n) 
+
+        nx.draw(G, with_labels=True, font_weight='bold')
+        plt.show()
+
+        # return number of edges
+        m = int(graph.number_of_edges())
+
+        # finds number of trinagles for each node
+        t = nx.triangles(graph)
+
+        # return number of triangles in the graph
+        num_t = int(sum(t.values()) / 3)
+
+        '''conjecture = check_conjecture(6, num_t, m)
+        
+        if conjecture == 1:
+
+            bad_graphs.append(graph)
+
+        n = n + 1'''
+
+    return bad_graphs
+
+if __name__ == "__main__":
+
+    # add u,v and edges to graphs
+    graphs, edges, triangles = create_2_apex(G)
+    nx.draw(G, with_labels=True, font_weight='bold')
+    plt.show()
+    delete_edge_check_u(G)
+
+    '''f_graphs = []
+
+    i = 0
+
+    while i < len(graphs):
+
+        #delete edges and check conjecture for first graph
+        #delete_edge_check_u(graphs[i], edges[i], triangles[i])
+
+        #delete edges and check conjecture for first graph
+        bg = delete_edge_check_u(graphs[i])
+
+        f_graphs.append(bg)
+
+        i = i + 1
+    
+    print(f_graphs)'''
