@@ -43,4 +43,5 @@ the inequality fails. It remains to checked if these graphs are linklessly embed
 - ![Test Image 1](<Screenshot 2026-09-11 140110.png>)
 - ![Test Image 1](<Screenshot 2026-09-11 140139.png>)
 - ![Test Image 1](graph.png)
+- This example also prints the number of vertices, edges and triangles in the graphs, and the final list of graphs as well as the length of the list.
 - ![Test Image 1](terminal.png)
