@@ -38,7 +38,8 @@ the inequality fails. It remains to checked if these graphs are linklessly embed
 - delete_edge_check_v() deletes edges from vertex v, checks the conjecture, and appends graphs which fail to satisfy the conjecture to the list bad_graphs. returns bad_graphs.
 
 ## Example
-- Show screen shots of code running explain example case for using code show results
+- The following reads a list of planar graphs from the file '7apex2m11.g6' and uses create_2_apex() to add vertices u and v and all necessary edges.
+- It then checks the conjecture for all graphs in the list, appends the graphs that fail to satisfy the conjecture to a list and then displays those graphs
 - ![Test Image 1](<Screenshot 2026-09-11 140110.png>)
 - ![Test Image 1](<Screenshot 2026-09-11 140139.png>)
 - ![Test Image 1](graph.png)
