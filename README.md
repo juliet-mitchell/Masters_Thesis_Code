@@ -39,7 +39,7 @@ the inequality fails. It remains to checked if these graphs are linklessly embed
 
 ## Example
 - Show screen shots of code running explain example case for using code show results
-- ![Test Image 1](Screenshot 2026-09-11 140110.png)
-- ![Test Image 1](Screenshot 2026-09-11 140139.png)
+- ![Test Image 1](<Screenshot 2026-09-11 140110.png>)
+- ![Test Image 1](<Screenshot 2026-09-11 140139.png>)
 - ![Test Image 1](graph.png)
 - ![Test Image 1](terminal.png)
