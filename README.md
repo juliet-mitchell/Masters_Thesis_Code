@@ -31,7 +31,11 @@ Here n denotes the number of vertices of the graph, and t is the number of trian
 the inequality fails. It remains to checked if these graphs are linklessly embeddable.
 
 ## Structure
-This file contains several .g6 files which store graph information, and graph_implementation.py which contains the main code
+- This file contains several .g6 files which store graph information, and graph_implementation.py which contains the main code.
+- The function create_2_apex() takes in a list of graphs stored in a .g6 file and adds edges u and v making them 2-apex. It returns the new list of graphs with their number of triangles and edges
+- check_conjecture() takes in a graph and checks to see if the conjecture holds. If it is satisfied it returns a zero, if the inequality does not hold it returns a 1.
+- delete_edge_check_u() deletes edges from vertex u, checks the conjecture, and appends graphs which fail to satisfy the conjecture to the list bad_graphs. returns bad_graphs.
+- delete_edge_check_v() deletes edges from vertex v, checks the conjecture, and appends graphs which fail to satisfy the conjecture to the list bad_graphs. returns bad_graphs.
 
 ## Example
 - Show screen shots of code running explain example case for using code show results
